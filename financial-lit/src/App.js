@@ -1,16 +1,17 @@
 import React from 'react';
-import Header from './components/Header';
-import MainContent from './components/MainContent';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import LandingPage from './pages/LandingPage/LandingPage';
+import SignUpPage from './pages/SignUpPage/SignUpPage';
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <MainContent />
-      <Footer />
-    </div>
+  return(
+    <Router>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/signUp" component={SignUpPage} />
+      </Switch>
+    </Router>
   );
 }
-export default App;
 
+export default App;
